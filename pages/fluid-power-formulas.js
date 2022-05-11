@@ -1,10 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Head from "next/head";
 import Footer from "./components/footer";
 
-function Formulas() {
+const Formulas = () => {
   // state for Force
   const [isPressure, setIsPressure] = useState();
   const [isArea, setIsArea] = useState();
@@ -140,7 +139,9 @@ function Formulas() {
   };
 
   // Force
-  let forceResult = document.getElementById("forceResult");
+  if (typeof window !== "undefined") {
+    let forceResult = document.getElementById("forceResult");
+  }
 
   function force1(pressure, area) {
     return pressure * area;
@@ -155,7 +156,10 @@ function Formulas() {
   };
 
   // GPM
-  const gpmresult = document.getElementById("gpmresult");
+  if (typeof window !== "undefined") {
+    const gpmresult = document.getElementById("gpmresult");
+  }
+
   const c2 = 231;
 
   function gpm(rpm2, displacement2) {
@@ -171,7 +175,10 @@ function Formulas() {
   };
 
   // Hyd HP
-  const hydHPResult = document.getElementById("hydHPResult");
+  if (typeof window !== "undefined") {
+    const hydHPResult = document.getElementById("hydHPResult");
+  }
+
   const c3 = 1714;
 
   function hydraulicHorsePower(gpm3, psi3) {
@@ -187,7 +194,10 @@ function Formulas() {
   };
 
   // Torque (in lbs)
-  const torqueResult4 = document.getElementById("torqueResult4");
+  if (typeof window !== "undefined") {
+    const torqueResult4 = document.getElementById("torqueResult4");
+  }
+
   const c4 = 6.28;
 
   function torque4(psi4, area4) {
@@ -203,7 +213,10 @@ function Formulas() {
   };
 
   // Torque (in lbs)
-  const torqueResult5 = document.getElementById("torqueResult5");
+  if (typeof window !== "undefined") {
+    const torqueResult5 = document.getElementById("torqueResult5");
+  }
+
   const c5 = 63025;
 
   function torque5(hp5, rpm5) {
@@ -219,7 +232,9 @@ function Formulas() {
   };
 
   // Cylinder area (in²)
-  const output6 = document.getElementById("output6");
+  if (typeof window !== "undefined") {
+    const output6 = document.getElementById("output6");
+  }
   const c6 = 0.7854;
 
   function cylArea6(dia6) {
@@ -234,7 +249,10 @@ function Formulas() {
   };
 
   // EREA - Effected Rod End Area (in²)
-  const output12 = document.getElementById("output12");
+  if (typeof window !== "undefined") {
+    const output12 = document.getElementById("output12");
+  }
+
   const c12 = 0.7854;
 
   function erea12(dia12, rod12) {
@@ -250,7 +268,10 @@ function Formulas() {
   };
 
   // Cyl Time (seconds)
-  const output7 = document.getElementById("output7");
+  if (typeof window !== "undefined") {
+    const output7 = document.getElementById("output7");
+  }
+
   const c7 = 0.26;
 
   function cylTime7(area7, stroke7, gpm7) {
@@ -267,7 +288,10 @@ function Formulas() {
   };
 
   // Cyl HP
-  const output8 = document.getElementById("output8");
+  if (typeof window !== "undefined") {
+    const output8 = document.getElementById("output8");
+  }
+
   const c8 = 33000;
 
   function cylHp8(cylSpeed8, cylForce8) {
@@ -283,7 +307,9 @@ function Formulas() {
   };
 
   // Cyl Adj. gpm on retract
-  const output9 = document.getElementById("output9");
+  if (typeof window !== "undefined") {
+    const output9 = document.getElementById("output9");
+  }
 
   function cylRetract9(cylArea9, gpm9, erea9) {
     return (cylArea9 * gpm9) / erea9;
@@ -299,7 +325,10 @@ function Formulas() {
   };
 
   // Cyl Speed (ft/min)
-  const output10 = document.getElementById("output10");
+  if (typeof window !== "undefined") {
+    const output10 = document.getElementById("output10");
+  }
+
   const c10 = 5;
 
   function cylSpeed10(stroke10, time10) {
@@ -315,7 +344,10 @@ function Formulas() {
   };
 
   // Cyl Speed (ft/min)
-  const output11 = document.getElementById("output11");
+  if (typeof window !== "undefined") {
+    const output11 = document.getElementById("output11");
+  }
+
   const c11 = 19.25;
 
   function cylSpeed11(gpm11, area11) {
@@ -331,36 +363,41 @@ function Formulas() {
   };
 
   return (
-    <>
-      <Helmet>
-        <title>
-          {" "}
-          TU - Technical Union | Fluid Power Formulas | Calculator{" "}
-        </title>
+    <div>
+      <div>
+        <Head>
+          <title>
+            TU - Technical Union | Fluid Power Formulas | Calculator{" "}
+          </title>
 
-        <meta
-          name="description"
-          content="Fluid Power calculator | PSI, Force, GPM, Speed, etc.. "
-        />
-        <meta name="keywords" content="Fluid Power, Formulas, Calculator" />
-        <meta name="author" content="Edgar Lindo" />
+          <meta
+            name="description"
+            content="Fluid Power calculator | PSI, Force, GPM, Speed, etc.. "
+          />
+          <meta name="keywords" content="Fluid Power, Formulas, Calculator" />
+          <meta name="author" content="Edgar Lindo" />
 
-        <meta property="og:title" content=" Fluid Power Formulas Calculator" />
-        <meta
-          property="og:description"
-          content="Interactive Fluid Power Formulas"
-        />
-        <meta property="og:image" content="./Images/oppictures/formulas.png" />
-        <meta property="og:url" content="http://www.tu.biz/Formulas" />
-      </Helmet>
-
+          <meta
+            property="og:title"
+            content=" Fluid Power Formulas Calculator"
+          />
+          <meta
+            property="og:description"
+            content="Interactive Fluid Power Formulas"
+          />
+          <meta
+            property="og:image"
+            content="./Images/oppictures/formulas.png"
+          />
+          <meta property="og:url" content="http://www.tu.biz/Formulas" />
+        </Head>
+      </div>
       <div className="row">
         <div className="col-md-12">
           <div className="formulas-title">
             <h1 className="fluid-power-formulas">Fluid Power Formulas</h1>
           </div>
         </div>
-
         <div className="col-md-6">
           <h6>
             Force (lbs) = <br /> <br />
@@ -486,7 +523,6 @@ function Formulas() {
           </h6>
           <br /> <hr className="linebreak" />
         </div>
-
         <div className="col-md-6">
           <h6>
             EREA - Effected Rod End Area (in²) = <br /> <br />
@@ -633,8 +669,8 @@ function Formulas() {
           <br />
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
 
 export default Formulas;
