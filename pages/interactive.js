@@ -1,170 +1,166 @@
-import React from "react";
+import { React, useEffect } from "react";
 import Image from "next/image";
-import Head from "next/head";
+import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 import gsap from "gsap";
 import Footer from "./components/footer";
 
 const Interactive = () => {
-  let animation;
-  let isButtonADisabled = true;
-  let isButtonBDisabled = true;
+  useEffect(() => {
+    let animation;
+    let isButtonADisabled = true;
+    let isButtonBDisabled = true;
 
-  gsap.set("#A1, #A2, #B1, #B2, #P, #Solb, #Sola", { opacity: 0 });
-  gsap.set("#A, #B, #Stop, #Start", { opacity: 0.7 });
+    gsap.set("#A1, #A2, #B1, #B2, #P, #Solb, #Sola", { opacity: 0 });
+    gsap.set("#A, #B, #Stop, #Start", { opacity: 0.7 });
 
-  function stagea1() {
-    let extenda1 = gsap.timeline({ defaults: { ease: "none" } }),
-      speed = 40;
-    extenda1
-      .to("#Rod", {
-        x: 200,
-        duration: Math.abs(200 - gsap.getProperty("#Rod", "x")) / speed,
-      })
-      .to("#Start, #A", { opacity: 1 }, "<")
-      .to("#Stop, #B", { opacity: 0.7 }, "<")
-      .to("#Arrow", { y: 0, duration: 0.1 }, "<")
-      .to("#VCenter", { x: -75.64, duration: 0.1 }, "<")
-      .to("#Sola", { opacity: 1 }, "<")
-      .to("#P, #B1, #B2, #A2, #Solb", { opacity: 0 }, "<")
-      .to("#A1", { opacity: 1 }, "<")
-      .to("#A1", { opacity: 0 }, "+=0.1")
-      .to("#A2", { opacity: 1 }, "<")
-      .to("#Arrow", { y: -15, ease: "none" }, "<")
-      .to("#A2", { opacity: 0 }, "+=1")
-      .to("#VCenter", { x: 0, duration: 0.1 }, "<")
-      .to("#Sola", { opacity: 0 }, "<")
-      .to("#P", { opacity: 1 }, "<")
-      .to("#A", { opacity: 0.7 });
-    return extenda1;
-  }
-
-  function stagea2() {
-    let extenda2 = gsap.timeline({ defaults: { ease: "none" } }),
-      speed = 40;
-    extenda2
-      .to("#P, #B1, #B2, #A1, #solb", { opacity: 0 })
-      .to("#Start, #A", { opacity: 1 }, "<")
-      .to("#Stop, #B", { opacity: 0.7 }, "<")
-      .to("#VCenter", { x: -75.64, duration: 0.1 }, "<")
-      .to("#Sola", { opacity: 1 }, "<")
-      .to("#A2", { opacity: 1, duration: 1 }, "<")
-      .to("#A2", { opacity: 0 }, "+=1")
-      .to("#Sola", { opacity: 0 }, "<")
-      .to("#VCenter", { x: 0, duration: 0.1 }, "<")
-      .to("#Arrow", { y: -15, duration: 0.1 }, "<")
-      .to("#P", { opacity: 1 }, "<")
-      .to("#A", { opacity: 0.7 });
-    return extenda2;
-  }
-
-  function stageb1() {
-    let retractb1 = gsap.timeline({ defaults: { ease: "none" } }),
-      speed = 50;
-    retractb1
-      .to("#Rod", {
-        x: 0,
-        duration: Math.abs(0 - gsap.getProperty("#Rod", "x")) / speed,
-      })
-      .to("#Start, #B", { opacity: 1 }, "<")
-      .to("#Stop, #A", { opacity: 0.7 }, "<")
-      .to("#Arrow", { y: 0, duration: 0.1 }, "<")
-      .to("#VCenter", { x: 75.64, duration: 0.1 }, "<")
-      .to("#Solb", { opacity: 1 }, "<")
-      .to("#P, #A1, #A2, #B2, #Sola", { opacity: 0 }, "<")
-      .to("#B1", { opacity: 1 }, "<")
-      .to("#B1", { opacity: 0 }, "+=0.1")
-      .to("#B2", { opacity: 1 }, "<")
-      .to("#Arrow", { y: -15 }, "<")
-      .to("#B2", { opacity: 0 }, "+=1")
-      .to("#VCenter", { x: 0, duration: 0.1 }, "<")
-      .to("#Solb", { opacity: 0 }, "<")
-      .to("#P", { opacity: 1 }, "<")
-      .to("#Solb", { opacity: 0 }, "<")
-      .to("#B", { opacity: 0.7 }, "<");
-    return retractb1;
-  }
-
-  function stageb2() {
-    let retractb2 = gsap.timeline({ defaults: { ease: "none" } }),
-      speed = 50;
-    retractb2
-      .to("#P, #A1, #A2, #B1, #Sola", { opacity: 0 })
-      .to("#B2", { opacity: 1, duration: 1, ease: "none" }, "<")
-      .to("#B, #Start", { opacity: 1 }, "<")
-      .to("#A, #Stop", { opacity: 0.7 }, "<")
-      .to("#Solb", { opacity: 1, duration: 1, ease: "none" }, "<")
-      .to("#VCenter", { x: 75.64, duration: 0.1 }, "<")
-      .to("#B2", { opacity: 0, ease: "none" }, "+=0.1")
-      .to("#Solb", { opacity: 0 }, "<")
-      .to("#VCenter", { x: 0, duration: 0.1 }, "<")
-      .to("#Arrow", { y: -15, duration: 0.1 }, "<")
-      .to("#B", { opacity: 0.7 }, "<")
-      .to("#P", { opacity: 1, ease: "none" }, "<");
-    return retractb2;
-  }
-
-  function stagestart() {
-    let start1 = gsap.timeline({
-      defaults: { ease: "none" },
-    });
-    start1
-      .to("#A1, #A2, #B1, #B2", { opacity: 0 })
-      .to("#P, #Start", { opacity: 1 }, "<")
-      .to("#Stop", { opacity: 0.7 })
-      .to("#Arrow", { y: -15, duration: 0.1 }, "<");
-
-    return start1;
-  }
-
-  function stagestop() {
-    let stop1 = gsap.timeline({
-      defaults: { ease: "none" },
-    });
-    stop1
-      .to("#A1, #A2, #B1, #B2, #P, #Sola, #Solb", { opacity: 0 })
-      .to("#A, #B, #Start", { opacity: 0.7 })
-      .to("#Stop", { opacity: 1 })
-      .to("#Arrow, #VCenter", { y: 0, x: 0, duration: 0.1 }, "<");
-    return stop1;
-  }
-
-  let btna = () => {
-    if (isButtonADisabled) return;
-    if (gsap.getProperty("#Rod", "x") < 200) {
-      if (animation) animation.kill();
-      animation = stagea1();
-    } else if (gsap.getProperty("#Rod", "x") === 200) {
-      if (animation) animation.kill();
-      animation = stagea2();
+    function stagea1() {
+      let extenda1 = gsap.timeline({ defaults: { ease: "none" } }),
+        speed = 40;
+      extenda1
+        .to("#Rod", {
+          x: 200,
+          duration: Math.abs(200 - gsap.getProperty("#Rod", "x")) / speed,
+        })
+        .to("#Start, #A", { opacity: 1 }, "<")
+        .to("#Stop, #B", { opacity: 0.7 }, "<")
+        .to("#Arrow", { y: 0, duration: 0.1 }, "<")
+        .to("#VCenter", { x: -75.64, duration: 0.1 }, "<")
+        .to("#Sola", { opacity: 1 }, "<")
+        .to("#P, #B1, #B2, #A2, #Solb", { opacity: 0 }, "<")
+        .to("#A1", { opacity: 1 }, "<")
+        .to("#A1", { opacity: 0 }, "+=0.1")
+        .to("#A2", { opacity: 1 }, "<")
+        .to("#Arrow", { y: -15, ease: "none" }, "<")
+        .to("#A2", { opacity: 0 }, "+=1")
+        .to("#VCenter", { x: 0, duration: 0.1 }, "<")
+        .to("#Sola", { opacity: 0 }, "<")
+        .to("#P", { opacity: 1 }, "<")
+        .to("#A", { opacity: 0.7 });
+      return extenda1;
     }
-  };
 
-  let btnb = () => {
-    if (isButtonBDisabled) return;
-    if (gsap.getProperty("#Rod", "x") > 0) {
-      if (animation) animation.kill();
-      animation = stageb1();
-    } else if (gsap.getProperty("#Rod", "x") === 0) {
-      if (animation) animation.kill();
-      animation = stageb2();
+    function stagea2() {
+      let extenda2 = gsap.timeline({ defaults: { ease: "none" } }),
+        speed = 40;
+      extenda2
+        .to("#P, #B1, #B2, #A1, #solb", { opacity: 0 })
+        .to("#Start, #A", { opacity: 1 }, "<")
+        .to("#Stop, #B", { opacity: 0.7 }, "<")
+        .to("#VCenter", { x: -75.64, duration: 0.1 }, "<")
+        .to("#Sola", { opacity: 1 }, "<")
+        .to("#A2", { opacity: 1, duration: 1 }, "<")
+        .to("#A2", { opacity: 0 }, "+=1")
+        .to("#Sola", { opacity: 0 }, "<")
+        .to("#VCenter", { x: 0, duration: 0.1 }, "<")
+        .to("#Arrow", { y: -15, duration: 0.1 }, "<")
+        .to("#P", { opacity: 1 }, "<")
+        .to("#A", { opacity: 0.7 });
+      return extenda2;
     }
-  };
 
-  let btnstop = () => {
-    if (animation) animation.kill();
-    animation = stagestop();
-    isButtonBDisabled = true;
-    isButtonADisabled = true;
-  };
-
-  let btnstart = () => {
-    isButtonBDisabled = false;
-    isButtonADisabled = false;
-
-    if (!animation || animation.isActive() === false) {
-      animation = stagestart();
+    function stageb1() {
+      let retractb1 = gsap.timeline({ defaults: { ease: "none" } }),
+        speed = 50;
+      retractb1
+        .to("#Rod", {
+          x: 0,
+          duration: Math.abs(0 - gsap.getProperty("#Rod", "x")) / speed,
+        })
+        .to("#Start, #B", { opacity: 1 }, "<")
+        .to("#Stop, #A", { opacity: 0.7 }, "<")
+        .to("#Arrow", { y: 0, duration: 0.1 }, "<")
+        .to("#VCenter", { x: 75.64, duration: 0.1 }, "<")
+        .to("#Solb", { opacity: 1 }, "<")
+        .to("#P, #A1, #A2, #B2, #Sola", { opacity: 0 }, "<")
+        .to("#B1", { opacity: 1 }, "<")
+        .to("#B1", { opacity: 0 }, "+=0.1")
+        .to("#B2", { opacity: 1 }, "<")
+        .to("#Arrow", { y: -15 }, "<")
+        .to("#B2", { opacity: 0 }, "+=1")
+        .to("#VCenter", { x: 0, duration: 0.1 }, "<")
+        .to("#Solb", { opacity: 0 }, "<")
+        .to("#P", { opacity: 1 }, "<")
+        .to("#Solb", { opacity: 0 }, "<")
+        .to("#B", { opacity: 0.7 }, "<");
+      return retractb1;
     }
-  };
+
+    function stageb2() {
+      let retractb2 = gsap.timeline({ defaults: { ease: "none" } }),
+        speed = 50;
+      retractb2
+        .to("#P, #A1, #A2, #B1, #Sola", { opacity: 0 })
+        .to("#B2", { opacity: 1, duration: 1, ease: "none" }, "<")
+        .to("#B, #Start", { opacity: 1 }, "<")
+        .to("#A, #Stop", { opacity: 0.7 }, "<")
+        .to("#Solb", { opacity: 1, duration: 1, ease: "none" }, "<")
+        .to("#VCenter", { x: 75.64, duration: 0.1 }, "<")
+        .to("#B2", { opacity: 0, ease: "none" }, "+=0.1")
+        .to("#Solb", { opacity: 0 }, "<")
+        .to("#VCenter", { x: 0, duration: 0.1 }, "<")
+        .to("#Arrow", { y: -15, duration: 0.1 }, "<")
+        .to("#B", { opacity: 0.7 }, "<")
+        .to("#P", { opacity: 1, ease: "none" }, "<");
+      return retractb2;
+    }
+
+    function stagestart() {
+      let start1 = gsap.timeline({
+        defaults: { ease: "none" },
+      });
+      start1
+        .to("#A1, #A2, #B1, #B2", { opacity: 0 })
+        .to("#P, #Start", { opacity: 1 }, "<")
+        .to("#Stop", { opacity: 0.7 })
+        .to("#Arrow", { y: -15, duration: 0.1 }, "<");
+
+      return start1;
+    }
+
+    function stagestop() {
+      let stop1 = gsap.timeline({
+        defaults: { ease: "none" },
+      });
+      stop1
+        .to("#A1, #A2, #B1, #B2, #P, #Sola, #Solb", { opacity: 0 })
+        .to("#A, #B, #Start", { opacity: 0.7 })
+        .to("#Stop", { opacity: 1 })
+        .to("#Arrow, #VCenter", { y: 0, x: 0, duration: 0.1 }, "<");
+      return stop1;
+    }
+
+    let btna = () => {
+      if (isButtonADisabled) return;
+      if (gsap.getProperty("#Rod", "x") < 200) {
+        if (animation) animation.kill();
+        animation = stagea1();
+      } else if (gsap.getProperty("#Rod", "x") === 200) {
+        if (animation) animation.kill();
+        animation = stagea2();
+      }
+    };
+
+    let btnb = () => {
+      if (isButtonBDisabled) return;
+      if (gsap.getProperty("#Rod", "x") > 0) {
+        if (animation) animation.kill();
+        animation = stageb1();
+      } else if (gsap.getProperty("#Rod", "x") === 0) {
+        if (animation) animation.kill();
+        animation = stageb2();
+      }
+    };
+
+    let btnstop = () => {
+      if (animation) animation.kill();
+      animation = stagestop();
+      isButtonBDisabled = true;
+      isButtonADisabled = true;
+    };
+  }),
+    [];
+
   return (
     <div>
       <div>
@@ -1047,7 +1043,6 @@ const Interactive = () => {
             </text>
           </svg>
         </div>
-
         <div className="col-md-6">
           <p>
             Simulation of a simple hydraulic circuit for cylinder extension and
