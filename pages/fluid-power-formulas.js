@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import Footer from "./components/footer";
 
 const Formulas = () => {
   // state for Force
@@ -458,7 +457,7 @@ const Formulas = () => {
               onChange={getVariables}
             />{" "}
             / 1,714
-            <button className="equals3" id="equals3" onClick={equals3}>
+            <button className="equals" id="equals3" onClick={equals3}>
               =
             </button>
             <output type="number" id="hydHPResult"></output>
@@ -480,7 +479,7 @@ const Formulas = () => {
               onChange={getVariables}
             />{" "}
             / 6.28
-            <button className="equals4" id="equals4" onClick={equals4}>
+            <button className="equals" id="equals4" onClick={equals4}>
               =
             </button>
             <output type="number" id="torqueResult4"></output>
@@ -501,7 +500,7 @@ const Formulas = () => {
               id="rpm5"
               onChange={getVariables}
             />
-            <button className="equals5" id="equals5" onClick={equals5}>
+            <button className="equals" id="equals5" onClick={equals5}>
               =
             </button>
             <output type="number" id="torqueResult5"></output>
@@ -516,7 +515,7 @@ const Formulas = () => {
               onChange={getVariables}
             />{" "}
             ² x .7854
-            <button className="equals6" id="equals6" onClick={equals6}>
+            <button className="equals" id="equals6" onClick={equals6}>
               =
             </button>
             <output type="number" id="output6"></output>
@@ -540,7 +539,7 @@ const Formulas = () => {
               onChange={getVariables}
             />{" "}
             ² x.7854
-            <button className="equals12" id="equals12" onClick={equals12}>
+            <button className="equals" id="equals12" onClick={equals12}>
               =
             </button>
             <output type="number" id="output12"></output>
@@ -568,7 +567,7 @@ const Formulas = () => {
               id="gpm7"
               onChange={getVariables}
             />
-            <button className="equals7" id="equals7" onClick={equals7}>
+            <button className="equals" id="equals7" onClick={equals7}>
               =
             </button>
             <output type="number" id="output7"></output>
@@ -590,7 +589,7 @@ const Formulas = () => {
               onChange={getVariables}
             />{" "}
             / 33,000
-            <button className="equals8" id="equals8" onClick={equals8}>
+            <button className="equals" id="equals8" onClick={equals8}>
               =
             </button>
             <output type="number" id="output8"></output>
@@ -618,7 +617,7 @@ const Formulas = () => {
               id="erea9"
               onChange={getVariables}
             />
-            <button className="equals9" id="equals9" onClick={equals9}>
+            <button className="equals" id="equals9" onClick={equals9}>
               =
             </button>
             <output type="number" id="output9"></output>
@@ -639,7 +638,7 @@ const Formulas = () => {
               id="time10"
               onChange={getVariables}
             />
-            <button className="equals10" id="equals10" onClick={equals10}>
+            <button className="equals" id="equals10" onClick={equals10}>
               =
             </button>
             <output type="number" id="output10"></output>
@@ -660,7 +659,7 @@ const Formulas = () => {
               id="area11"
               onChange={getVariables}
             />
-            <button className="equals11" id="equals11" onClick={equals11}>
+            <button className="equals" id="equals11" onClick={equals11}>
               =
             </button>
             <output type="number" id="output11"></output>

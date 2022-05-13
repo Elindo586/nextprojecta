@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
-import Footer from "../components/footer";
+import ServicesNav from "../components/servicesNav";
 
 const Laboratory = () => {
   return (
@@ -139,6 +139,9 @@ const Laboratory = () => {
               </ul>
             </div>
           </div>
+        </div>
+        <div className="col-md-3">
+          <ServicesNav />
         </div>
       </div>
     </div>

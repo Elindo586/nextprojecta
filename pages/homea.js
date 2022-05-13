@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Head from "next/head";
-import Footer from "./components/footer";
 
 const Template = () => {
   return (
@@ -108,8 +107,6 @@ const Template = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };

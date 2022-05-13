@@ -343,8 +343,6 @@ const Products = () => {
           <p> nav bar here.</p>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };
