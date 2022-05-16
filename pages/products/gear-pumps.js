@@ -27,7 +27,7 @@ const GearPumps = () => {
           />
           <meta
             property="og:url"
-            content="http://www.tu.biz/Products/GearPumps"
+            content="http://www.tu.biz/products/gear-pumps"
           />
         </Head>
       </div>

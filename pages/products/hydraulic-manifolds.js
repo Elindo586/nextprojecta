@@ -5,7 +5,7 @@ import Link from "next/link";
 import PumpForm from "../components/pump-form";
 import ProductNav from "../components/nav-products";
 
-const TemplateProducts = () => {
+const HydraulicManifolds = () => {
   return (
     <div>
       <div>
@@ -176,4 +176,4 @@ const TemplateProducts = () => {
   );
 };
 
-export default TemplateProducts;
+export default HydraulicManifolds;

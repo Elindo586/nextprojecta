@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import ProductNav from "../components/nav-products";
 
-const TemplateProducts = () => {
+const DirectionalControlValves = () => {
   return (
     <div>
       <div>
@@ -117,4 +117,4 @@ const TemplateProducts = () => {
   );
 };
 
-export default TemplateProducts;
+export default DirectionalControlValves;

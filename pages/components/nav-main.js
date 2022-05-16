@@ -53,8 +53,10 @@ function MainNav() {
       className="navbar navbar-expand-lg bg-dark navbar-dark"
       onClick={title}
     >
-      <Link href="/" className="navbar-brand" onClick={title}>
-        <a>TECHNICAL UNION</a>
+      <Link href="/">
+        <a onClick={title} className="navbar-brand">
+          TECHNICAL UNION
+        </a>
       </Link>
 
       <button
@@ -73,61 +75,61 @@ function MainNav() {
       <div className="navbar-collapse collapse" id="navbarTogglerDemo02">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <Link href="/" className="nav-link" onClick={title}>
-              <a>| Home</a>
+            <Link href="/">
+              <a className="nav-link" onClick={title}>
+                | Home
+              </a>
             </Link>
           </li>
 
           <li className="nav-item">
             {/* <a className="nav-link" href="/Products/products.html">| Products</a> */}
-            <Link
-              href="/products/piston-pumps"
-              className="nav-link"
-              onClick={title}
-            >
-              <a>| Products</a>
+            <Link href="/products/piston-pumps">
+              <a className="nav-link" onClick={title}>
+                | Products
+              </a>
             </Link>
           </li>
 
           <li className="nav-item">
             {/* <a className="nav-link" href="/Services/Services.html">| Services</a> */}
-            <Link
-              href="/services/fluid-analysis"
-              className="nav-link"
-              onClick={title}
-            >
-              <a>| Services</a>
+            <Link href="/services/fluid-analysis">
+              <a className="nav-link" onClick={title}>
+                | Services
+              </a>
             </Link>
           </li>
 
           <li className="nav-item">
-            <Link href="/inventory" className="nav-link">
-              <a>| Inventory</a>
+            <Link href="/inventory">
+              <a className="nav-link">| Inventory</a>
             </Link>
           </li>
 
           <li className="nav-item">
             {/* <a className="nav-link" href="formulas.html">| Formulas</a> */}
-            <Link
-              href="/fluid-power-formulas"
-              className="nav-link"
-              onClick={title}
-            >
-              <a>| Formulas</a>
+            <Link href="/fluid-power-formulas">
+              <a className="nav-link" onClick={title}>
+                | Formulas
+              </a>
             </Link>
           </li>
 
           <li className="nav-item">
             {/* <a className="nav-link" href="Interactive.html">| Interactive</a> */}
-            <Link href="/interactive" className="nav-link" onClick={title}>
-              <a>| Interactive</a>
+            <Link href="/interactive">
+              <a className="nav-link" onClick={title}>
+                | Interactive
+              </a>
             </Link>
           </li>
 
           <li className="nav-item">
             {/* <a className="nav-link" href="contactus.html">| Contact Us</a> */}
-            <Link href="/contact-us" className="nav-link" onClick={title}>
-              <a>| Contact Us</a>
+            <Link href="/contact-us">
+              <a className="nav-link" onClick={title}>
+                | Contact Us
+              </a>
             </Link>
           </li>
         </ul>
