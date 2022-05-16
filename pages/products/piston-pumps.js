@@ -2,10 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
-import Footer from "../components/footer";
-import PumpForm from "../components/PumpForm";
+import MotorForm from "../components/Motor-form";
 
-const Products = () => {
+const PistonPumps = () => {
   return (
     <div>
       <div>
@@ -336,7 +335,7 @@ const Products = () => {
             <br /> <br />
           </div>
           <div className="col-md-12">
-            <PumpForm />
+            <MotorForm />
           </div>
         </div>
         <div className="col-md-3">
@@ -347,4 +346,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default PistonPumps;

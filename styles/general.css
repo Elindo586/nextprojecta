@@ -106,6 +106,10 @@
   color: white;
 }
 
+.active3 {
+  color: black;
+}
+
 .nav2 {
   list-style-type: none;
   margin: 0;

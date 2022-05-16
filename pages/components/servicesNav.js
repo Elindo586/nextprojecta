@@ -21,14 +21,18 @@ function ServicesNav() {
             </h5>
           </li>
 
-          <dl
-            className={
-              pathName === "/services/fluid-analysis"
-                ? "link2 active2"
-                : "link2"
-            }
-          >
-            <Link href="/services/fluid-analysis"> Laboratory Testing</Link>
+          <dl>
+            <Link href="/services/fluid-analysis" passHref>
+              <a
+                className={
+                  pathName === "/services/fluid-analysis"
+                    ? "link2 active2"
+                    : "link2"
+                }
+              >
+                Laboratory Testing
+              </a>
+            </Link>
           </dl>
 
           <li>
@@ -36,15 +40,17 @@ function ServicesNav() {
               Preventive Maintenance
             </h5>
           </li>
-          <dl
-            className={
-              pathName === "/services/preventive-maintenance-programs"
-                ? "link2 active2"
-                : "link2"
-            }
-          >
-            <Link href="/services/preventive-maintenance-programs">
-              Programs
+          <dl>
+            <Link href="/services/preventive-maintenance-programs" passHref>
+              <a
+                className={
+                  pathName === "/services/preventive-maintenance-programs"
+                    ? "link2 active2"
+                    : "link2"
+                }
+              >
+                Programs
+              </a>
             </Link>
           </dl>
         </ul>

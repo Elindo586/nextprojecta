@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const PumpForm = () => {
+const MotorForm = () => {
   return (
     <div className="col-md-12 bg-light">
       <p>
@@ -134,4 +134,4 @@ const PumpForm = () => {
   );
 };
 
-export default PumpForm;
+export default MotorForm;
