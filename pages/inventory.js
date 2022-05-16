@@ -2,9 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
-import PumpForm from "../components/pump-form";
 
-const TemplateProducts = () => {
+const Inventory = () => {
   return (
     <div>
       <div>
@@ -12,7 +11,7 @@ const TemplateProducts = () => {
       </div>
       <div className="row">
         <div className="col-md-9 table-responsive">
-          <div className="col-md-12"></div>
+          <div className="col-md-12">This will be the inventory page</div>
           <div className="col-md-12"></div>
           <div className="col-md-12"></div>
           <div className="col-md12"></div>
@@ -23,4 +22,4 @@ const TemplateProducts = () => {
   );
 };
 
-export default TemplateProducts;
+export default Inventory;

@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import PumpForm from "../components/pump-form";
+import ProductNav from "../components/nav-products";
 
 const VanePumps = () => {
   return (
@@ -626,9 +628,13 @@ const VanePumps = () => {
             </table>
             <br />
           </div>
-          <div className="col-md12"></div>
+          <div className="col-md12">
+            <PumpForm />
+          </div>
         </div>
-        <div className="col-md-3"> Navbar</div>
+        <div className="col-md-3">
+          <ProductNav />
+        </div>
       </div>
     </div>
   );

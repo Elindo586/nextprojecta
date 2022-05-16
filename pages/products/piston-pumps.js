@@ -2,7 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
-import MotorForm from "../components/Motor-form";
+import PumpForm from "../components/pump-form";
+import ProductNav from "../components/nav-products";
 
 const PistonPumps = () => {
   return (
@@ -335,11 +336,11 @@ const PistonPumps = () => {
             <br /> <br />
           </div>
           <div className="col-md-12">
-            <MotorForm />
+            <PumpForm />
           </div>
         </div>
         <div className="col-md-3">
-          <p> nav bar here.</p>
+          <ProductNav />
         </div>
       </div>
     </div>
